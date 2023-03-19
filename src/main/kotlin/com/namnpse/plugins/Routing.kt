@@ -9,6 +9,7 @@ import io.ktor.http.*
 import io.ktor.http.content.*
 import io.ktor.response.*
 import io.ktor.routing.*
+import javax.naming.AuthenticationException
 
 fun Application.configureRouting() {
     routing {
@@ -18,6 +19,10 @@ fun Application.configureRouting() {
             resources("images")
         }
         searchHeroes()
+
+        get("/exception") {
+            throw AuthenticationException()
+        }
     }
 }
 
