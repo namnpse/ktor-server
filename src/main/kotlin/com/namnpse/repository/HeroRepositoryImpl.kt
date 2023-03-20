@@ -19,7 +19,7 @@ class HeroRepositoryImpl : HeroRepository {
             message = "OK",
             prevPage = calculatePage(page = page)[PREVIOUS_PAGE_KEY],
             nextPage = calculatePage(page = page)[NEXT_PAGE_KEY],
-            data = heroes,
+            data = heroes.filter { hero -> hero.id in (page-1)* PAGE_SIZE + 1 ..(page)* PAGE_SIZE  },
             lastUpdated = System.currentTimeMillis()
         )
     }

@@ -1,7 +1,6 @@
 package com.namnpse
 
 import com.namnpse.models.ApiResponse
-import com.namnpse.repository.HeroRepositoryImpl
 import com.namnpse.repository.*
 import io.ktor.application.*
 import io.ktor.http.*
@@ -10,9 +9,12 @@ import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.json.Json
 import org.junit.Test
+import org.koin.java.KoinJavaComponent.inject
 import kotlin.test.assertEquals
 
 class ApplicationTest {
+
+    private val heroRepository: HeroRepository by inject(HeroRepository::class.java)
 
     @ExperimentalSerializationApi
     @Test
@@ -42,7 +44,6 @@ class ApplicationTest {
     @Test
     fun `access all heroes endpoint, get all pages, assert correct data`() {
         withTestApplication(moduleFunction = Application::module) {
-            val heroRepository = HeroRepositoryImpl()
             val pages = 1..3
 
             val heroes = heroRepository.heroes
