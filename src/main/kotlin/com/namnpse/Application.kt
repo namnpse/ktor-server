@@ -22,6 +22,9 @@ fun main(args: Array<String>): Unit = io.ktor.server.netty.EngineMain.main(args)
 @Suppress("unused") // application.conf references this main function. This annotation prevents the IDE from marking it as unused
 fun Application.module() {
     configureDI()
+    // cache-control, can see in Postman,
+    // -> tell HTTP client (app) that we want to cache our data.
+    // so, when server is down or app has no internet connection, we're still able to get data (images url from server)
     configureDefaultHeader()
     configureRouting()
     configureMonitoring()

@@ -33,6 +33,12 @@ class HeroRepositoryImpl : HeroRepository {
         if (page in 2..3) {
             prevPage = prevPage?.minus(1)
         }
+        if (page == 1) {
+            prevPage = null
+        }
+        if (page == 3) {
+            nextPage = null
+        }
         return mapOf(PREVIOUS_PAGE_KEY to prevPage, NEXT_PAGE_KEY to nextPage)
     }
 
