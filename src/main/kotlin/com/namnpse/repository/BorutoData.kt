@@ -2,7 +2,7 @@ package com.namnpse.repository
 
 import com.namnpse.models.Hero
 
-val page1 = listOf(
+val borutoHeroes = listOf(
     Hero(
         id = 1,
         name = "Sasuke",
@@ -89,9 +89,7 @@ val page1 = listOf(
             "Water",
             "Fire"
         )
-    )
-)
-val page2 = listOf(
+    ),
     Hero(
         id = 4,
         name = "Boruto",
@@ -166,9 +164,7 @@ val page2 = listOf(
             "Lightning",
             "Wind"
         )
-    )
-)
-val page3 = listOf(
+    ),
     Hero(
         id = 7,
         name = "Kawaki",
@@ -239,9 +235,7 @@ val page3 = listOf(
             "Earth",
             "Water"
         )
-    )
-)
-val page4 = listOf(
+    ),
     Hero(
         id = 10,
         name = "Isshiki",
@@ -313,9 +307,7 @@ val page4 = listOf(
             "Wind",
             "Earth"
         )
-    )
-)
-val page5 = listOf(
+    ),
     Hero(
         id = 13,
         name = "Code",

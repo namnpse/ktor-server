@@ -10,7 +10,7 @@ const val PREVIOUS_PAGE_KEY = "prevPage"
 class HeroRepositoryImpl : HeroRepository {
 
     override val heroes: List<Hero> by lazy {
-        page1.plus(page2).plus(page3).plus(page4).plus(page5)
+        borutoHeroes
     }
 
     override suspend fun getAllHeroes(page: Int): ApiResponse {
