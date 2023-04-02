@@ -392,6 +392,7 @@ class HeroRepositoryImplAlternative : HeroRepositoryAlternative {
                 page = page,
                 limit = limit
             )[NEXT_PAGE_KEY],
+            currentPage = page,
             data = getHeroes(
                 heroes = heroes,
                 page = page,

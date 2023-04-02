@@ -14,7 +14,7 @@ fun Route.getAllHeroesAlternative() {
     get("/heroes") {
         try {
             val page = call.request.queryParameters["page"]?.toInt() ?: 1
-            val limit = call.request.queryParameters["limit"]?.toInt() ?: 4
+            val limit = call.request.queryParameters["limit"]?.toInt() ?: 5
 
             val apiResponse = heroRepositoryAlternative.getAllHeroes(
                 page = page, limit = limit
