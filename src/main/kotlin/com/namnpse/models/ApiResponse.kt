@@ -1,6 +1,5 @@
 package com.namnpse.models
 
-import com.namnpse.models.Hero
 import kotlinx.serialization.Serializable
 
 @Serializable
