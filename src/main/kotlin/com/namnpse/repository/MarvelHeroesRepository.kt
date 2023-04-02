@@ -3,7 +3,7 @@ package com.namnpse.repository
 import com.namnpse.models.ApiResponse
 import com.namnpse.models.Hero
 
-interface HeroRepositoryAlternative {
+interface MarvelHeroesRepository {
 
     val heroes: List<Hero>
 
