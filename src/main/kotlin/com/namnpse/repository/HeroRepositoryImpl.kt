@@ -2,6 +2,7 @@ package com.namnpse.repository
 
 import com.namnpse.models.ApiResponse
 import com.namnpse.models.Hero
+import com.namnpse.models.HeroResponse
 
 const val PAGE_SIZE = 5
 const val NEXT_PAGE_KEY = "nextPage"
@@ -51,10 +52,18 @@ class HeroRepositoryImpl : HeroRepository {
         )
     }
 
+    override suspend fun getHeroById(heroId: Int): HeroResponse {
+        return HeroResponse(
+            success = true,
+            message = "OK",
+            data = findHeroById(heroId = heroId)
+        )
+    }
+
     private fun findHeroes(query: String?): List<Hero> {
         val result = mutableListOf<Hero>()
         return if (!query.isNullOrEmpty()) {
-            heroes.forEach { hero ->
+            (heroes+marvelHeroes).forEach { hero ->
                 if (hero.name.lowercase().contains(query.lowercase())) {
                     result.add(hero)
                 }
@@ -63,5 +72,9 @@ class HeroRepositoryImpl : HeroRepository {
         } else {
             emptyList()
         }
+    }
+
+    private fun findHeroById(heroId: Int): Hero? {
+        return (heroes+marvelHeroes).find { it.id == heroId }
     }
 }

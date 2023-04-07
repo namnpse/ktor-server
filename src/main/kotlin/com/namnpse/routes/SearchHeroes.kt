@@ -19,4 +19,20 @@ fun Route.searchHeroes() {
             status = HttpStatusCode.OK
         )
     }
+
+    get("/heroes/{id}") {
+        val heroId = call.parameters["id"]?.toInt()
+        if(heroId != null) {
+            val apiResponse = heroRepository.getHeroById(heroId = heroId)
+            call.respond(
+                message = apiResponse,
+                status = HttpStatusCode.OK
+            )
+            return@get
+        }
+        call.respond(
+            message = "Hero doesn't exist.",
+            status = HttpStatusCode.OK
+        )
+    }
 }
