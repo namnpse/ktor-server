@@ -2,6 +2,8 @@ package com.namnpse.repository
 
 import com.namnpse.models.ApiResponse
 import com.namnpse.models.Hero
+import com.namnpse.models.HeroResponse
+import io.ktor.http.*
 
 
 class HeroRepositoryImplAlternative : HeroRepositoryAlternative {
@@ -37,9 +39,34 @@ class HeroRepositoryImplAlternative : HeroRepositoryAlternative {
     override suspend fun searchHeroes(name: String?): ApiResponse {
         return ApiResponse(
             success = true,
-            message = "ok",
+            message = HttpStatusCode.OK.value.toString(),
             data = findHeroes(query = name)
         )
+    }
+
+    override suspend fun getHeroById(heroId: Int): HeroResponse {
+        return HeroResponse(
+            success = true,
+            message = HttpStatusCode.OK.value.toString(),
+            data = findHeroById(heroId = heroId)
+        )
+    }
+
+    override suspend fun getBanners(): ApiResponse {
+        return ApiResponse(
+            success = true,
+            message = HttpStatusCode.OK.value.toString(),
+            data = getAllBanners()
+        )
+    }
+
+    private fun findHeroById(heroId: Int): Hero? {
+        return (heroes+marvelHeroes).find { it.id == heroId }
+    }
+
+    private fun getAllBanners(): List<Hero> {
+        val allHeroes = (heroes+ marvelHeroes).shuffled()
+        return allHeroes.take(8)
     }
 
     private fun calculatePage(

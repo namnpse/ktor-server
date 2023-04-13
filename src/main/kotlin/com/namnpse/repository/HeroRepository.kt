@@ -14,4 +14,6 @@ interface HeroRepository {
 
     suspend fun getHeroById(heroId: Int): HeroResponse
 
+    suspend fun getBanners(): ApiResponse
+
 }

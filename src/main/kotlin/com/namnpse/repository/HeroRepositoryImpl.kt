@@ -60,6 +60,14 @@ class HeroRepositoryImpl : HeroRepository {
         )
     }
 
+    override suspend fun getBanners(): ApiResponse {
+        return ApiResponse(
+            success = true,
+            message = "ok",
+//            data = findHeroes(query = name)
+        )
+    }
+
     private fun findHeroes(query: String?): List<Hero> {
         val result = mutableListOf<Hero>()
         return if (!query.isNullOrEmpty()) {

@@ -187,7 +187,7 @@ val marvelHeroes = listOf(
         rating = 4.5,
         power = 97,
         realName = "Francis Castiglione",
-        family = listOf(
+        aliases = listOf(
             "Frank Castle",
             "Johnny Tower"
         ),
@@ -263,7 +263,7 @@ val marvelHeroes = listOf(
     Hero(
         id = 1013,
         name = "Iceman",
-        image = "/images/marvel/ice-man.jpg",
+        image = "/images/marvel/ice-man.jpeg",
         about = "The youngest member of the original X-Men. Bobby is an Omega-level mutant, although it took some help from Emma Frost to realize this. Bobby's control of ice is vast; he can create shields, clones, spikes, slides and also freeze others. He was recently elected to Krakoa's X-Men",
         rating = 3.4,
         power = 95,
