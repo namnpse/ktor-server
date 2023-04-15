@@ -32,7 +32,8 @@ val borutoHeroes = listOf(
             "Wind",
             "Earth",
             "Water"
-        )
+        ),
+        collection = "Boruto"
     ),
     Hero(
         id = 2,
@@ -61,7 +62,8 @@ val borutoHeroes = listOf(
             "Earth",
             "Lava",
             "Fire"
-        )
+        ),
+        collection = "Boruto"
     ),
     Hero(
         id = 3,
@@ -88,7 +90,8 @@ val borutoHeroes = listOf(
             "Earth",
             "Water",
             "Fire"
-        )
+        ),
+        collection = "Boruto"
     ),
     Hero(
         id = 4,
@@ -116,7 +119,8 @@ val borutoHeroes = listOf(
             "Lightning",
             "Wind",
             "Water"
-        )
+        ),
+        collection = "Boruto"
     ),
     Hero(
         id = 5,
@@ -140,7 +144,8 @@ val borutoHeroes = listOf(
             "Lightning",
             "Wind",
             "Fire"
-        )
+        ),
+        collection = "Boruto"
     ),
     Hero(
         id = 6,
@@ -163,7 +168,8 @@ val borutoHeroes = listOf(
         natureTypes = listOf(
             "Lightning",
             "Wind"
-        )
+        ),
+        collection = "Boruto"
     ),
     Hero(
         id = 7,
@@ -184,7 +190,8 @@ val borutoHeroes = listOf(
         ),
         natureTypes = listOf(
             "Fire"
-        )
+        ),
+        collection = "Boruto"
     ),
     Hero(
         id = 8,
@@ -210,7 +217,8 @@ val borutoHeroes = listOf(
             "Fire",
             "Earth",
             "Water"
-        )
+        ),
+        collection = "Boruto"
     ),
     Hero(
         id = 9,
@@ -234,7 +242,8 @@ val borutoHeroes = listOf(
             "Fire",
             "Earth",
             "Water"
-        )
+        ),
+        collection = "Boruto"
     ),
     Hero(
         id = 10,
@@ -257,7 +266,8 @@ val borutoHeroes = listOf(
         ),
         natureTypes = listOf(
             "Fire"
-        )
+        ),
+        collection = "Boruto"
     ),
     Hero(
         id = 11,
@@ -282,7 +292,8 @@ val borutoHeroes = listOf(
             "Wind",
             "Water",
             "Earth"
-        )
+        ),
+        collection = "Boruto"
     ),
     Hero(
         id = 12,
@@ -306,7 +317,8 @@ val borutoHeroes = listOf(
             "Lightning",
             "Wind",
             "Earth"
-        )
+        ),
+        collection = "Boruto"
     ),
     Hero(
         id = 13,
@@ -327,7 +339,8 @@ val borutoHeroes = listOf(
         ),
         natureTypes = listOf(
             "Unknown"
-        )
+        ),
+        collection = "Boruto"
     ),
     Hero(
         id = 14,
@@ -348,7 +361,8 @@ val borutoHeroes = listOf(
         ),
         natureTypes = listOf(
             "Unknown"
-        )
+        ),
+        collection = "Boruto"
     ),
     Hero(
         id = 15,
@@ -370,6 +384,7 @@ val borutoHeroes = listOf(
         natureTypes = listOf(
             "Fire",
             "Earth"
-        )
+        ),
+        collection = "Boruto"
     )
 )
