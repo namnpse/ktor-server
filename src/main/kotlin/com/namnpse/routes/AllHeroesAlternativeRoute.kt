@@ -15,9 +15,12 @@ fun Route.getAllHeroesAlternative() {
         try {
             val page = call.request.queryParameters["page"]?.toInt() ?: 1
             val limit = call.request.queryParameters["limit"]?.toInt() ?: 5
+            val collection = call.request.queryParameters["collection"] ?: ""
+
+            println("$page $limit $collection")
 
             val apiResponse = heroRepositoryAlternative.getAllHeroes(
-                page = page, limit = limit
+                page = page, limit = limit, collection = collection,
             )
             call.respond(
                 message = apiResponse,
@@ -30,8 +33,14 @@ fun Route.getAllHeroesAlternative() {
             )
         } catch (e: IllegalArgumentException) {
             call.respond(
-                message = ApiResponse(success = false, message = "Heroes not Found."),
-                status = HttpStatusCode.NotFound
+                message = ApiResponse(success = true, message = "Heroes not Found."),
+//                status = HttpStatusCode.NotFound
+                status = HttpStatusCode.OK
+            )
+        } catch (e: Exception) {
+            call.respond(
+                message = ApiResponse(success = false, message = "Internal Server Error."),
+                status = HttpStatusCode.InternalServerError
             )
         }
     }

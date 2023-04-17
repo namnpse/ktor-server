@@ -25,7 +25,8 @@ val marvelHeroes = listOf(
             "Logan",
             "Weapon X",
             "Black Dragon"
-        )
+        ),
+        collection = "Marvel"
     ),
     Hero(
         id = 1002,
@@ -50,6 +51,7 @@ val marvelHeroes = listOf(
             "Gadgets"
         ),
         realName = "Steven Grant Rogers",
+        collection = "Marvel"
     ),
     Hero(
         id = 1003,
@@ -74,6 +76,7 @@ val marvelHeroes = listOf(
             "Radiation",
             "Energy Absorption"
         ),
+        collection = "Marvel"
     ),
     Hero(
         id = 1004,
@@ -97,6 +100,7 @@ val marvelHeroes = listOf(
             "Invulnerability"
         ),
         gender = "Female",
+        collection = "Marvel"
     ),
     Hero(
         id = 1005,
@@ -121,6 +125,7 @@ val marvelHeroes = listOf(
             "Wall Clinger",
             "Webslinger"
         ),
+        collection = "Marvel"
     ),
     Hero(
         id = 1006,
@@ -140,7 +145,8 @@ val marvelHeroes = listOf(
             "Sharingan",
             "Strength",
             "Intelligence"
-        )
+        ),
+        collection = "Marvel"
     ),
     Hero(
         id = 1007,
@@ -159,7 +165,8 @@ val marvelHeroes = listOf(
             "Blast Power",
             "Electricity Control",
             "Gadgets"
-        )
+        ),
+        collection = "Marvel"
     ),
     Hero(
         id = 1008,
@@ -178,6 +185,7 @@ val marvelHeroes = listOf(
             "Agility",
             "Blast Power"
         ),
+        collection = "Marvel"
     ),
     Hero(
         id = 1009,
@@ -199,6 +207,7 @@ val marvelHeroes = listOf(
             "Weapon Master",
             "Tracking"
         ),
+        collection = "Marvel"
     ),
     Hero(
         id = 1010,
@@ -217,6 +226,7 @@ val marvelHeroes = listOf(
             "Flight",
             "Gravity control"
         ),
+        collection = "Marvel"
     ),
     Hero(
         id = 1011,
@@ -239,6 +249,7 @@ val marvelHeroes = listOf(
             "Intellect",
             "Leadership"
         ),
+        collection = "Marvel"
     ),
     Hero(
         id = 1012,
@@ -259,6 +270,7 @@ val marvelHeroes = listOf(
             "Gadgets",
             "Leadership"
         ),
+        collection = "Marvel"
     ),
     Hero(
         id = 1013,
@@ -280,6 +292,7 @@ val marvelHeroes = listOf(
             "Teleport",
             "Water Control"
         ),
+        collection = "Marvel"
     ),
     Hero(
         id = 1014,
@@ -299,6 +312,7 @@ val marvelHeroes = listOf(
             "Dimensional Manipulation",
             "Time Travel"
         ),
+        collection = "Marvel"
     ),
     Hero(
         id = 1015,
@@ -319,5 +333,6 @@ val marvelHeroes = listOf(
             "Leadership",
             "Psychic",
         ),
+        collection = "Marvel"
     ),
 )

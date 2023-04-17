@@ -1,6 +1,7 @@
 package com.namnpse.routes
 
 import com.namnpse.repository.HeroRepository
+import com.namnpse.repository.HeroRepositoryAlternative
 import io.ktor.application.*
 import io.ktor.http.*
 import io.ktor.response.*
@@ -8,7 +9,8 @@ import io.ktor.routing.*
 import org.koin.ktor.ext.inject
 
 fun Route.searchHeroes() {
-    val heroRepository: HeroRepository by inject()
+//    val heroRepository: HeroRepository by inject()
+    val heroRepository: HeroRepositoryAlternative by inject()
 
     get("/heroes/search") {
         val name = call.request.queryParameters["name"]
@@ -41,5 +43,14 @@ fun Route.searchHeroes() {
                 status = HttpStatusCode.NotFound
             )
         }
+    }
+
+    get("/banners") {
+
+        val apiResponse = heroRepository.getBanners()
+        call.respond(
+            message = apiResponse,
+            status = HttpStatusCode.OK
+        )
     }
 }

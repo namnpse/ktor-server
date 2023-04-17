@@ -9,10 +9,10 @@ import io.ktor.http.*
 class HeroRepositoryImplAlternative : HeroRepositoryAlternative {
 
     override val heroes by lazy {
-        borutoHeroes
+        borutoHeroes+marvelHeroes
     }
 
-    override suspend fun getAllHeroes(page: Int, limit: Int): ApiResponse {
+    override suspend fun getAllHeroes(page: Int, limit: Int, collection: String): ApiResponse {
         return ApiResponse(
             success = true,
             message = "OK",
@@ -30,7 +30,8 @@ class HeroRepositoryImplAlternative : HeroRepositoryAlternative {
             data = getHeroes(
                 heroes = heroes,
                 page = page,
-                limit = limit
+                limit = limit,
+                collection = collection,
             ),
             lastUpdated = System.currentTimeMillis()
         )
@@ -61,11 +62,11 @@ class HeroRepositoryImplAlternative : HeroRepositoryAlternative {
     }
 
     private fun findHeroById(heroId: Int): Hero? {
-        return (heroes+marvelHeroes).find { it.id == heroId }
+        return (heroes).find { it.id == heroId }
     }
 
     private fun getAllBanners(): List<Hero> {
-        val allHeroes = (heroes+ marvelHeroes).shuffled()
+        val allHeroes = (heroes).shuffled()
         return allHeroes.take(8)
     }
 
@@ -91,9 +92,11 @@ class HeroRepositoryImplAlternative : HeroRepositoryAlternative {
     private fun getHeroes(
         heroes: List<Hero>,
         page: Int,
-        limit: Int
+        limit: Int,
+        collection: String,
     ): List<Hero> {
-        val allHeroes = heroes.windowed(
+        val selectedHeroes = if(collection.isEmpty()) heroes else heroes.filter { it.collection == collection }
+        val allHeroes = selectedHeroes.windowed(
             size = limit,
             step = limit,
             partialWindows = true
