@@ -10,9 +10,14 @@ data class Hero(
     val about: String,
     val rating: Double,
     val power: Int,
-    val month: String,
-    val day: String,
-    val family: List<String>,
     val abilities: List<String>,
-    val natureTypes: List<String>
+    val gender: String = "Male",
+    val month: String? = null,
+    val day: String? = null,
+    val family: List<String>? = null,
+    val natureTypes: List<String>? = null,
+    val realName: String? = null,
+    val issues: Int? = null,
+    val aliases: List<String>? = null,
+    val collection: String,
 )

@@ -1,24 +1,22 @@
 package com.namnpse.plugins
 
-import com.namnpse.routes.getAllHeroes
-import com.namnpse.routes.root
-import com.namnpse.routes.searchHeroes
+import com.namnpse.routes.*
 import io.ktor.application.*
-import io.ktor.features.*
-import io.ktor.http.*
 import io.ktor.http.content.*
-import io.ktor.response.*
 import io.ktor.routing.*
 import javax.naming.AuthenticationException
 
 fun Application.configureRouting() {
     routing {
         root()
-        getAllHeroes()
+//        getAllHeroes()
+        getAllHeroesAlternative()
+        getMarvelHeroes()
         static("/images") {
             resources("images")
         }
         searchHeroes()
+        searchMarvelHeroes()
 
         get("/exception") {
             throw AuthenticationException()

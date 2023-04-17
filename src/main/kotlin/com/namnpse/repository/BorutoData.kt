@@ -2,7 +2,7 @@ package com.namnpse.repository
 
 import com.namnpse.models.Hero
 
-val page1 = listOf(
+val borutoHeroes = listOf(
     Hero(
         id = 1,
         name = "Sasuke",
@@ -32,7 +32,8 @@ val page1 = listOf(
             "Wind",
             "Earth",
             "Water"
-        )
+        ),
+        collection = "Boruto"
     ),
     Hero(
         id = 2,
@@ -61,7 +62,8 @@ val page1 = listOf(
             "Earth",
             "Lava",
             "Fire"
-        )
+        ),
+        collection = "Boruto"
     ),
     Hero(
         id = 3,
@@ -88,10 +90,9 @@ val page1 = listOf(
             "Earth",
             "Water",
             "Fire"
-        )
-    )
-)
-val page2 = listOf(
+        ),
+        collection = "Boruto"
+    ),
     Hero(
         id = 4,
         name = "Boruto",
@@ -118,7 +119,8 @@ val page2 = listOf(
             "Lightning",
             "Wind",
             "Water"
-        )
+        ),
+        collection = "Boruto"
     ),
     Hero(
         id = 5,
@@ -142,7 +144,8 @@ val page2 = listOf(
             "Lightning",
             "Wind",
             "Fire"
-        )
+        ),
+        collection = "Boruto"
     ),
     Hero(
         id = 6,
@@ -165,10 +168,9 @@ val page2 = listOf(
         natureTypes = listOf(
             "Lightning",
             "Wind"
-        )
-    )
-)
-val page3 = listOf(
+        ),
+        collection = "Boruto"
+    ),
     Hero(
         id = 7,
         name = "Kawaki",
@@ -188,7 +190,8 @@ val page3 = listOf(
         ),
         natureTypes = listOf(
             "Fire"
-        )
+        ),
+        collection = "Boruto"
     ),
     Hero(
         id = 8,
@@ -214,7 +217,8 @@ val page3 = listOf(
             "Fire",
             "Earth",
             "Water"
-        )
+        ),
+        collection = "Boruto"
     ),
     Hero(
         id = 9,
@@ -238,10 +242,9 @@ val page3 = listOf(
             "Fire",
             "Earth",
             "Water"
-        )
-    )
-)
-val page4 = listOf(
+        ),
+        collection = "Boruto"
+    ),
     Hero(
         id = 10,
         name = "Isshiki",
@@ -263,7 +266,8 @@ val page4 = listOf(
         ),
         natureTypes = listOf(
             "Fire"
-        )
+        ),
+        collection = "Boruto"
     ),
     Hero(
         id = 11,
@@ -288,7 +292,8 @@ val page4 = listOf(
             "Wind",
             "Water",
             "Earth"
-        )
+        ),
+        collection = "Boruto"
     ),
     Hero(
         id = 12,
@@ -312,10 +317,9 @@ val page4 = listOf(
             "Lightning",
             "Wind",
             "Earth"
-        )
-    )
-)
-val page5 = listOf(
+        ),
+        collection = "Boruto"
+    ),
     Hero(
         id = 13,
         name = "Code",
@@ -335,7 +339,8 @@ val page5 = listOf(
         ),
         natureTypes = listOf(
             "Unknown"
-        )
+        ),
+        collection = "Boruto"
     ),
     Hero(
         id = 14,
@@ -356,7 +361,8 @@ val page5 = listOf(
         ),
         natureTypes = listOf(
             "Unknown"
-        )
+        ),
+        collection = "Boruto"
     ),
     Hero(
         id = 15,
@@ -378,6 +384,7 @@ val page5 = listOf(
         natureTypes = listOf(
             "Fire",
             "Earth"
-        )
+        ),
+        collection = "Boruto"
     )
 )

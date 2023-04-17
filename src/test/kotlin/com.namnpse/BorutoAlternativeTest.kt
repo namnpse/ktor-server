@@ -1,6 +1,7 @@
 package com.namnpse
 
 import com.namnpse.models.ApiResponse
+import com.namnpse.models.Hero
 import com.namnpse.repository.*
 import io.ktor.application.*
 import io.ktor.http.*
@@ -12,7 +13,7 @@ import org.junit.Test
 import org.koin.java.KoinJavaComponent.inject
 import kotlin.test.assertEquals
 
-class ApplicationTest {
+class BorutoAlternativeTest {
 
     private val heroRepository: HeroRepository by inject(HeroRepository::class.java)
 
@@ -57,10 +58,13 @@ class ApplicationTest {
                     val expected = ApiResponse(
                         success = true,
                         message = "OK",
-                        prevPage = calculatePage(page = page)[PREVIOUS_PAGE_KEY],
-                        nextPage = calculatePage(page = page)[NEXT_PAGE_KEY],
+                        prevPage = calculatePage(heroes = heroes, page = page)[PREVIOUS_PAGE_KEY],
+                        nextPage = calculatePage(heroes = heroes, page = page)[NEXT_PAGE_KEY],
                         currentPage = page,
-                        data = heroes.filter { hero -> hero.id in (page - 1) * PAGE_SIZE + 1..(page) * PAGE_SIZE },
+                        data = getHeroes(
+                            heroes = heroes,
+                            page = page,
+                        ),
                         lastUpdated = actual.lastUpdated
                     )
                     assertEquals(
@@ -121,21 +125,36 @@ class ApplicationTest {
         }
     }
 
-     private fun calculatePage(page: Int): Map<String, Int?> {
-        var prevPage: Int? = page
-        var nextPage: Int? = page
-        if (page in 1..2) {
-            nextPage = nextPage?.plus(1)
-        }
-        if (page in 2..3) {
-            prevPage = prevPage?.minus(1)
-        }
-         if (page == 1) {
-             prevPage = null
-         }
-         if (page == 3) {
-             nextPage = null
-         }
-        return mapOf(PREVIOUS_PAGE_KEY to prevPage, NEXT_PAGE_KEY to nextPage)
+    private fun calculatePage(
+        heroes: List<Hero>,
+        page: Int,
+        limit: Int = 5
+    ): Map<String, Int?> {
+        val allHeroes = heroes.windowed(
+            size = limit,
+            step = limit,
+            partialWindows = true
+        )
+        require(page <= allHeroes.size)
+        val prevPage = if (page == 1) null else page - 1
+        val nextPage = if (page == allHeroes.size) null else page + 1
+        return mapOf(
+            PREVIOUS_PAGE_KEY to prevPage,
+            NEXT_PAGE_KEY to nextPage
+        )
+    }
+
+    private fun getHeroes(
+        heroes: List<Hero>,
+        page: Int,
+        limit: Int = 5
+    ): List<Hero> {
+        val allHeroes = heroes.windowed(
+            size = limit,
+            step = limit,
+            partialWindows = true
+        )
+        require(page > 0 && page <= allHeroes.size)
+        return allHeroes[page - 1]
     }
 }
