@@ -14,9 +14,13 @@ version = "1.0-SNAPSHOT"
 
 application {
     // for Engine Main
-//    mainClass.set("io.ktor.server.netty.EngineMain")
+    mainClass.set("io.ktor.server.netty.EngineMain")
     // for Embedded Server, point to config in Application.kt
-    mainClass.set("com.namnpse.ApplicationKt")
+//    mainClass.set("com.namnpse.ApplicationKt")
+}
+
+tasks.create("stage") {
+    dependsOn("installDist")
 }
 
 repositories {

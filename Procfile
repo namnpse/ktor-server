@@ -1,0 +1,1 @@
+web: build/install/com.namnpse/bin/com.namnpse
